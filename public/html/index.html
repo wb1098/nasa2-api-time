@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/animate.css" rel="stylesheet" type="text/css">
+
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="utf-8">
+    <title>NASA Small Body Project II</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to the Nasa - Near Miss List.</h1>
+
+
+
+    </header>
+    <div class="topMiddleSection">
+        <h2 class="weekText">For the week of: </h2>
+
+        <form id="search">
+            <input id="start-date" type="date" value="2017-09-01">
+            <input id="end-date" type="date" value="2017-09-07">
+            <button type="submit">Search Nasa</button>
+            <button type="reset">Reset Form</button>
+            <INPUT class="refreshBtn" TYPE="button" onClick="history.go(0)" VALUE="Search Again" />
+        </form>
+    </div>
+    <div class="astroidImpact"></div>
+    <div class="displayTextHolder">
+        <div class="displayText">
+            <p v-for="astroid in smallBodies" :link="astroid" v-html="astroid.displayData"></p>
+        </div>
+    </div>
+
+    <footer> heckle design - 2017</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+</body>
+
+</html>
